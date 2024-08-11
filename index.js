@@ -13,6 +13,10 @@ const startGame = () => {
         }
     }
 
+    for (let tile of tiles) {
+        tile.disabled = false;
+    }
+
     winner.innerText = "";
 
     gameOver = false;
@@ -59,6 +63,9 @@ const checkWin = () => {
                 tiles[pattern[0]].classList.add('WinBox');
                 tiles[pattern[1]].classList.add('WinBox');
                 tiles[pattern[2]].classList.add('WinBox');
+                for(let tile of tiles) {
+                    tile.disabled = true;
+                }
             }
         }
     }
